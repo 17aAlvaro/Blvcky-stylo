@@ -1,0 +1,18 @@
+{
+  "name": "Blvcky Stylo",
+  "short_name": "Blvcky",
+  "description": "Professional barber specialized in fades, designs and modern barbering techniques. Precision, Style, Identity.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/images/portadadefinitiva.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

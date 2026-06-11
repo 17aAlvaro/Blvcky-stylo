@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blvcky Stylo</title>
+    <meta name="description"
+        content="Professional barber specialized in fades, designs and modern barbering techniques. Precision, Style, Identity.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#050505">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/portadadefinitiva.png">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <h1 class="preloader-text">
+            <span>BLVCKY</span>
+            <span class="gold-gradient-text">STYLO</span>
+        </h1>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="logo">BLVCKY STYLO</div>
+        <nav class="nav-links">
+            <a href="#about">Quién Soy</a>
+            <a href="#portfolio">Trabajos</a>
+            <a href="#services">Servicios</a>
+            <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
+                rel="noopener noreferrer" class="btn btn-header-reservar">Reservar</a>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <!-- Placeholder for background video -->
+        <div class="hero-bg">
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="assets/videos/reel1.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal-text">MENTE <span class="gold-gradient-text">CLARA</span><br>IMAGEN <span
+                    class="gold-gradient-text">FUERTE</span><br>Y MUCHO <span class="gold-gradient-text">STYLO</span>
+            </h1>
+            <p class="hero-subtitle fade-in-up">Barbero profesional de fades, diseños con cuchilla y tintes based in
+                Pinto.</p>
+            <div class="hero-actions fade-in-up delay-1">
+                <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-gold btn-mega">Reservar cita</a>
+                <a href="#portfolio" class="btn btn-outline-white">Ver trabajos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios <span class="gold-text">Premium</span> MÁS DEMANDADOS</h2>
+                <p class="section-subtitle">Experiencias VIP a domicilio</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card glass-card hover-glow scroll-reveal">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-svg">
+                            <circle cx="6" cy="6" r="3"></circle>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                            <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                            <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">CORTE DE BLVCKY</h3>
+                    <p class="service-desc">Incluye peinado y cejas</p>
+                </div>
+
+                <div class="service-card glass-card hover-glow scroll-reveal delay-1">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-svg">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">CORTE Y PERILLA / BARBA</h3>
+                    <p class="service-desc">El servicio completo de corte junto con una perfilación y diseño de cejas.
+                    </p>
+                </div>
+
+                <div class="service-card glass-card hover-glow scroll-reveal delay-2">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-svg">
+                            <path
+                                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                            </path>
+                            <path d="M5 3v4"></path>
+                            <path d="M19 17v4"></path>
+                            <path d="M3 5h4"></path>
+                            <path d="M17 19h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Corte Aprendiz</h3>
+                    <p class="service-desc">Corta Kevin ACNIEL, está siendo formado actualmente en el curso de
+                        iniciación, tiene nivel suficiente como para hacer un buen corte.</p>
+                </div>
+
+                <div class="service-card glass-card hover-glow scroll-reveal delay-3">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-svg">
+                            <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">SEVICIO V.I.P </h3>
+                    <p class="service-desc">Iré a tu domicilio, hotel , hostal o apartamento para asesorarte y poder
+                        sacar tu mejor versión. Con este servicio te haré el corte de pelo, junto a barba (si es
+                        necesario), aplicación de pigmento(si es necesario) y un cuidado facial personalizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Galería de <span class="gold-text">Trabajos</span></h2>
+                <p class="section-subtitle">Explora la precisión en cada detalle.</p>
+            </div>
+
+            <div class="video-carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Previous">&lt;</button>
+                <div class="video-carousel-track">
+                    <!-- Video Cards -->
+                    <div class="carousel-card">
+                        <video src="assets/videos/reel1.mp4" autoplay loop muted playsinline class="portfolio-video"></video>
+                        <div class="card-overlay">
+                            <h4>Taper Fade</h4>
+                            <p>Precisión en el diseño</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <video src="assets/videos/reel2.mp4" autoplay loop muted playsinline class="portfolio-video"></video>
+                        <div class="card-overlay">
+                            <h4>Mohicano</h4>
+                            <p>Degradado</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <video src="assets/videos/reel3.mp4" autoplay loop muted playsinline class="portfolio-video"></video>
+                        <div class="card-overlay">
+                            <h4>Mid fade</h4>
+                            <p>El MÁS pedido</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <video src="assets/videos/reel4.mp4" autoplay loop muted playsinline class="portfolio-video"></video>
+                        <div class="card-overlay">
+                            <h4>Taper + design</h4>
+                            <p>Alineación perfecta</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <video src="assets/videos/reel5.mp4" autoplay loop muted playsinline class="portfolio-video"></video>
+                        <div class="card-overlay">
+                            <h4>Taper Fade</h4>
+                            <p>Transiciones limpias</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" aria-label="Next">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Experiencias de <span class="gold-text">Clientes (YEASY) </span></h2>
+            </div>
+
+            <div class="testimonial-slider-container">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"El mejor corte de mi vida. La atención al detalle que tiene Blvcky Stylo
+                            es de otro nivel. Totalmente recomendado si buscas un servicio verdaderamente premium."</p>
+                        <p class="client-name">- Carlos M.</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"El servicio VIP a domicilio es una locura. Súper profesional, puntual y
+                            el resultado es exactamente como lo pedí."</p>
+                        <p class="client-name">- Alejandro G.</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card glass-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"He probado muchos barberos, pero nadie hace los fades como él. Un
+                            verdadero artista."</p>
+                        <p class="client-name">- David R.</p>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" aria-label="Previous review">←</button>
+                    <button class="slider-btn next-btn" aria-label="Next review">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section-padding" id="about">
+        <div class="container about-grid">
+            <div class="about-image-wrapper reveal-left">
+                <img src="assets/images/portadadefinitiva.png" alt="Blvcky Stylo Profesional" class="about-image">
+            </div>
+            <div class="about-text reveal-right">
+                <h2 class="section-title">Quién es <span class="gold-text">Blvcky Stylo</span></h2>
+                <p>Soy un artista de la barbería comprometido con la excelencia. Más que un simple corte, ofrezco una
+                    experiencia de transformación personal.</p>
+                <p>Especialista en la industria, certificado a través de múltiples programas de formación en barbería, y
+                    respaldado por la confianza de miles de seguidores apasionados por la imagen, la precisión y la
+                    atención al detalle.</p>
+                <p>Mi objetivo es elevar el estándar de la barbería moderna, combinando técnicas clásicas con tendencias
+                    vanguardistas para crear estilos únicos y perfectos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="timeline-section section-padding" id="timeline">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Mi <span class="gold-text">Trayectoria</span></h2>
+            </div>
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card hover-glow scroll-reveal">
+                        <h3>2018 - Inicios</h3>
+                        <p>[Rellena tus inicios aquí]</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card hover-glow scroll-reveal delay-1">
+                        <h3>2020 - Especialización</h3>
+                        <p>[Rellena tu especialización aquí]</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card hover-glow scroll-reveal delay-2">
+                        <h3>2023 - Blvcky Stylo</h3>
+                        <p>[Rellena la fundación de tu marca aquí]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="achievements section-padding parallax-bg">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card scroll-reveal">
+                    <h3 class="stat-number">23K+</h3>
+                    <p class="stat-label">Seguidores</p>
+                </div>
+                <div class="stat-card glass-card scroll-reveal delay-1">
+                    <h3 class="stat-number">Certificados y cursos</h3>
+                    <p class="stat-label">Professional Barber</p>
+                </div>
+                <div class="stat-card glass-card scroll-reveal delay-2">
+                    <h3 class="stat-number">Especialista</h3>
+                    <p class="stat-label">En Fades & Hair Designs</p>
+                </div>
+                <div class="stat-card glass-card scroll-reveal delay-3">
+                    <h3 class="stat-number">Premium</h3>
+                    <p class="stat-label">VIP Home Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAVO SHOWCASE SECTION -->
+    <section class="bravo-showcase" id="bravo-showcase">
+        <div class="sticky-container">
+            <canvas id="clipper-canvas"></canvas>
+            <div class="bravo-showcase-text">
+                <p class="bravo-collab-title">BRAVO Spain</p>
+                <img src="assets/images/logobravo.jpg" alt="BRAVO Logo" class="bravo-showcase-logo">
+                <h2 class="bravo-showcase-title">COLABORANDO CON BRAVO</h2>
+                <p class="bravo-showcase-subtitle">Usando las mejores herramientas del mercado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM SECTION -->
+    <section class="instagram section-padding">
+        <div class="container center">
+            <h2 class="section-title">Sígueme en <span class="gold-text">Instagram</span></h2>
+            <p class="insta-handle"><a href="https://www.instagram.com/blvcky.stylo/" target="_blank"
+                    rel="noopener noreferrer">@blvcky.stylo</a></p>
+
+            <div class="insta-grid">
+                <!-- IG Feed Embeds -->
+                <div class="insta-item">
+                    <iframe src="https://www.instagram.com/reel/DZXbMJ9MqoL/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+                <div class="insta-item">
+                    <iframe src="https://www.instagram.com/reel/DZVLUEDMXd7/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+                <div class="insta-item">
+                    <iframe src="https://www.instagram.com/reel/DYfXVx4MB4a/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+                <div class="insta-item">
+                    <iframe src="https://www.instagram.com/reel/DYZUwjTMq88/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+            </div>
+
+            <a href="https://www.instagram.com/blvcky.stylo/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-outline-white insta-btn">Ver más en Instagram</a>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta section-padding" id="contact">
+        <div class="container center cta-content glass-card">
+            <h2 class="cta-title">Tu imagen empieza aquí.</h2>
+            <p class="cta-subtitle">Reserva tu próxima cita y vive una experiencia de barbería profesional.</p>
+            <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
+                rel="noopener noreferrer" class="btn btn-gold btn-large">Reservar Ahora</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>BLVCKY STYLO</h3>
+                <p>Mente clara, Imagen fuerte</p>
+            </div>
+            <div class="footer-links">
+                <h4>Contacto</h4>
+                <p>📍 Madrid</p> <!-- Example location -->
+                <p>📱 +34 600 000 000</p>
+                <p>✉️ IG @blvcky.stylo</p>
+            </div>
+            <div class="footer-social">
+                <h4>Social</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/blvcky.stylo/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom center">
+            <p>&copy; 2026 Blvcky Stylo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
