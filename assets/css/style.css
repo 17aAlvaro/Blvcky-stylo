@@ -117,6 +117,7 @@ h6,
         opacity: 0;
         transform: scale(0.9) translateY(10px);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -124,9 +125,23 @@ h6,
 }
 
 @keyframes preloaderFastGoldPulse {
-    0% { opacity: 0; transform: scale(0.95); filter: brightness(0.5); }
-    50% { opacity: 1; filter: brightness(1.3) drop-shadow(0 0 15px rgba(212, 175, 55, 0.4)); transform: scale(1.02); }
-    100% { opacity: 1; filter: brightness(1) drop-shadow(0 0 0 rgba(212, 175, 55, 0)); transform: scale(1); }
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+        filter: brightness(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.3) drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+        transform: scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        filter: brightness(1) drop-shadow(0 0 0 rgba(212, 175, 55, 0));
+        transform: scale(1);
+    }
 }
 
 /* PADDING & CONTAINERS - MOBILE FIRST */
@@ -289,7 +304,8 @@ h6,
 .about-image {
     width: 100%;
     height: 100%;
-    min-height: 250px; /* Reduced for a more compact look */
+    min-height: 250px;
+    /* Reduced for a more compact look */
     border-radius: 12px;
     border: 1px solid var(--glass-border);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
@@ -416,6 +432,8 @@ h6,
     width: 100%;
     height: 100%;
     z-index: -1;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
 }
 
 .hero-video {
@@ -424,15 +442,13 @@ h6,
     object-fit: cover;
 }
 
-
-
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.4) 0%, rgba(5, 5, 5, 0.6) 60%, rgba(5, 5, 5, 1) 100%);
 }
 
 .hero-content {
@@ -484,8 +500,10 @@ h6,
 /* ABOUT SECTION */
 #about {
     padding-top: 3rem;
-    padding-bottom: 1rem; /* Reduced bottom padding to bring timeline closer */
+    padding-bottom: 1rem;
+    /* Reduced bottom padding to bring timeline closer */
 }
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -726,9 +744,9 @@ h6,
 .service-card::before {
     content: '';
     position: absolute;
-    top: 0; 
-    left: 0; 
-    right: 0; 
+    top: 0;
+    left: 0;
+    right: 0;
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     opacity: 0.5;
@@ -811,6 +829,8 @@ h6,
     z-index: 1;
     opacity: 0.35;
     /* Baja opacidad para que actúe como fondo sutil */
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
 }
 
 .bravo-showcase-text {
@@ -1072,10 +1092,12 @@ h6,
         padding-top: 4rem;
         padding-bottom: 2rem;
     }
+
     .about-grid {
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
-        align-items: center; /* Changed from stretch to keep image compact */
+        align-items: center;
+        /* Changed from stretch to keep image compact */
     }
 
     /* TIMELINE */
