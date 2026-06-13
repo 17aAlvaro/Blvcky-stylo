@@ -261,9 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const scrollY = window.scrollY;
                     const viewportHeight = window.innerHeight;
 
-                    // Calculate scrub start and end points
-                    const scrollStart = sectionTop;
-                    const scrollEnd = sectionTop + sectionHeight - viewportHeight;
+                    // Calculate progress based on when the section is visible in the viewport
+                    const scrollStart = sectionTop - viewportHeight;
+                    const scrollEnd = sectionTop + sectionHeight;
                     
                     if (scrollY >= scrollStart && scrollY <= scrollEnd) {
                         const rawProgress = (scrollY - scrollStart) / (scrollEnd - scrollStart);
