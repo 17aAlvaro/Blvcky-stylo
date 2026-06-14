@@ -486,7 +486,8 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 4rem; padding-bottom: 2rem;">
-                <a href="certificados.html" class="btn-minimalist">Accede a mi galería de títulos, cursos y formaciones</a>
+                <a href="certificados.html" class="btn-minimalist">Accede a mi galería de títulos, cursos y
+                    formaciones</a>
             </div>
         </div>
     </section>
@@ -615,10 +616,74 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom center">
+        <div class="footer-bottom center"
+            style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="aviso-legal.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;"
+                    onmouseover="this.style.color='var(--gold)'"
+                    onmouseout="this.style.color='var(--text-secondary)'">Aviso Legal</a>
+                <a href="politica-privacidad.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;"
+                    onmouseover="this.style.color='var(--gold)'"
+                    onmouseout="this.style.color='var(--text-secondary)'">Política de Privacidad</a>
+                <a href="cookies.html"
+                    style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;"
+                    onmouseover="this.style.color='var(--gold)'"
+                    onmouseout="this.style.color='var(--text-secondary)'">Política de Cookies</a>
+            </div>
             <p>&copy; 2026 Blvcky Stylo. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner"
+        style="position: fixed; bottom: -100%; left: 0; width: 100%; background: rgba(5,5,5,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--gold); padding: 1.5rem; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: space-between; transition: bottom 0.5s ease; box-shadow: 0 -5px 20px rgba(0,0,0,0.5);">
+        <div style="max-width: 800px; text-align: center; margin-bottom: 1.5rem;">
+            <h4
+                style="color: var(--gold); margin-bottom: 0.5rem; font-family: var(--font-heading); letter-spacing: 1px;">
+                Aviso de Cookies</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0;">Utilizamos cookies propias y
+                de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias
+                mediante el análisis de sus hábitos de navegación. Puede obtener más información en nuestra <a
+                    href="cookies.html" style="color: var(--gold); text-decoration: underline;">Política de Cookies</a>.
+            </p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <button id="accept-cookies" class="btn btn-gold"
+                style="padding: 0.8rem 2rem; font-size: 0.85rem; border-radius: 4px; text-transform: uppercase;">Aceptar</button>
+            <button id="deny-cookies" class="btn btn-outline-white"
+                style="padding: 0.8rem 2rem; font-size: 0.85rem; border-radius: 4px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3);">Denegar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const denyBtn = document.getElementById('deny-cookies');
+
+            if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieBanner.style.bottom = '0';
+                }, 1000);
+            }
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookiesAccepted', 'true');
+                    cookieBanner.style.bottom = '-100%';
+                });
+            }
+
+            if (denyBtn) {
+                denyBtn.addEventListener('click', () => {
+                    localStorage.setItem('cookiesAccepted', 'false');
+                    cookieBanner.style.bottom = '-100%';
+                });
+            }
+        });
+    </script>
 
     <script src="assets/js/main.js"></script>
 </body>
