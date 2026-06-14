@@ -61,38 +61,128 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll.observe(el);
     });
 
-    // --- Testimonial Slider ---
+    // --- Enhanced Testimonial Slider ---
     const track = document.getElementById('testimonialTrack');
-    const prevBtn = document.querySelector('.slider-controls .prev-btn');
-    const nextBtn = document.querySelector('.slider-controls .next-btn');
-    let currentIndex = 0;
+    const prevBtn = document.querySelector('.slider-controls-top .prev-btn');
+    const nextBtn = document.querySelector('.slider-controls-top .next-btn');
+    const dotsContainer = document.getElementById('testimonialDots');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const totalSlides = slides.length;
+    let autoPlayInterval;
+    let isInteracting = false;
     
-    // Basic setup assuming 3 testimonials for now
-    const totalSlides = document.querySelectorAll('.testimonial-card').length;
-    
-    function updateSlider() {
-        const slideWidth = 100; // 100% since min-width is 100%
-        track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-    }
-
-    if(nextBtn && prevBtn && track) {
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < totalSlides - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop back to start
+    if (track && slides.length > 0) {
+        // Dynamic dots generation
+        function updateDots() {
+            const slideWidth = slides[0].offsetWidth;
+            const visibleSlides = Math.max(1, Math.floor(track.offsetWidth / slideWidth));
+            const maxIndex = Math.max(0, totalSlides - visibleSlides);
+            const numDots = maxIndex + 1;
+            
+            if (dotsContainer.children.length !== numDots) {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < numDots; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('testimonial-dot');
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    dotsContainer.appendChild(dot);
+                    
+                    dot.addEventListener('click', () => {
+                        pauseAutoPlay();
+                        scrollToSlide(i);
+                    });
+                }
             }
-            updateSlider();
+        }
+        
+        // Scroll to specific slide
+        function scrollToSlide(index) {
+            const slideWidth = slides[0].offsetWidth;
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            track.scrollTo({
+                left: index * (slideWidth + gap),
+                behavior: 'smooth'
+            });
+        }
+        
+        // Update dots and buttons on scroll
+        function handleScroll() {
+            updateDots();
+            
+            const slideWidth = slides[0].offsetWidth;
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            const scrollPos = track.scrollLeft;
+            const activeIndex = Math.round(scrollPos / (slideWidth + gap));
+            
+            const dots = document.querySelectorAll('.testimonial-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === activeIndex);
+            });
+            
+            // Disable buttons at edges
+            const visibleSlides = Math.max(1, Math.floor(track.offsetWidth / slideWidth));
+            const maxIndex = Math.max(0, totalSlides - visibleSlides);
+            
+            if (prevBtn) prevBtn.disabled = activeIndex <= 0;
+            if (nextBtn) nextBtn.disabled = activeIndex >= maxIndex;
+        }
+        
+        track.addEventListener('scroll', () => {
+            requestAnimationFrame(handleScroll);
         });
-
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = totalSlides - 1; // Loop to end
-            }
-            updateSlider();
-        });
+        
+        // Buttons
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                pauseAutoPlay();
+                const slideWidth = slides[0].offsetWidth;
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                track.scrollBy({ left: slideWidth + gap, behavior: 'smooth' });
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                pauseAutoPlay();
+                const slideWidth = slides[0].offsetWidth;
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                track.scrollBy({ left: -(slideWidth + gap), behavior: 'smooth' });
+            });
+        }
+        
+        // AutoPlay Logic
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (isInteracting) return;
+                const slideWidth = slides[0].offsetWidth;
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                const visibleSlides = Math.floor(track.offsetWidth / slideWidth);
+                const maxIndex = totalSlides - visibleSlides;
+                const scrollPos = track.scrollLeft;
+                const activeIndex = Math.round(scrollPos / (slideWidth + gap));
+                
+                if (activeIndex >= maxIndex) {
+                    // Loop back to start smoothly
+                    scrollToSlide(0);
+                } else {
+                    track.scrollBy({ left: slideWidth + gap, behavior: 'smooth' });
+                }
+            }, 4000); // 4 seconds
+        }
+        
+        function pauseAutoPlay() {
+            isInteracting = true;
+            setTimeout(() => { isInteracting = false; }, 8000); // Wait 8 seconds before resuming
+        }
+        
+        // Pause on touch/mouse interaction
+        track.addEventListener('pointerdown', pauseAutoPlay);
+        track.addEventListener('touchstart', pauseAutoPlay, {passive: true});
+        
+        // Init
+        startAutoPlay();
+        setTimeout(handleScroll, 100);
+        window.addEventListener('resize', handleScroll);
     }
 
 

@@ -211,48 +211,114 @@
     </section>
 
     <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials section-padding" id="testimonials">
-        <div class="container">
-            <div class="section-header center">
+    <section class="testimonials section-padding relative" id="testimonials">
+        <div class="container relative z-10">
+            <div class="section-header center" style="margin-bottom: 3rem;">
+                <span class="badge" style="display: inline-block; padding: 0.25rem 1rem; border-radius: 999px; background: rgba(212, 175, 55, 0.1); color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Experiencias</span>
                 <h2 class="section-title">Experiencias de <span class="gold-text">Clientes (YEASY) </span></h2>
+                <div class="header-line" style="margin: 1.5rem auto 0; width: 6rem; height: 4px; background: linear-gradient(to right, var(--gold), transparent); border-radius: 2px;"></div>
             </div>
 
-            <div class="testimonial-slider-container">
+            <div class="testimonial-slider-container relative" id="testimonialContainer">
+                <div class="slider-controls-top" style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-bottom: 1rem;">
+                    <button class="slider-btn prev-btn" aria-label="Previous review">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <button class="slider-btn next-btn" aria-label="Next review">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+
                 <div class="testimonial-track" id="testimonialTrack">
                     <!-- Reseña 1 -->
-                    <div class="testimonial-card glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"[Escribe aquí el texto de la reseña 1]"</p>
-                        <p class="client-name">- [Nombre del cliente 1]</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card glass-card hover-glow">
+                            <div class="quote-icon" style="position: absolute; top: -1rem; left: -1rem; opacity: 0.15; pointer-events: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 16 16 16s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="review-text">"[Escribe aquí el texto de la reseña 1]"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="client-name">[Nombre del cliente 1]</h4>
+                                        <div class="stars" style="margin-bottom:0;">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Reseña 2 -->
-                    <div class="testimonial-card glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"[Escribe aquí el texto de la reseña 2]"</p>
-                        <p class="client-name">- [Nombre del cliente 2]</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card glass-card hover-glow">
+                            <div class="quote-icon" style="position: absolute; top: -1rem; left: -1rem; opacity: 0.15; pointer-events: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 16 16 16s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="review-text">"[Escribe aquí el texto de la reseña 2]"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="client-name">[Nombre del cliente 2]</h4>
+                                        <div class="stars" style="margin-bottom:0;">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Reseña 3 -->
-                    <div class="testimonial-card glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"[Escribe aquí el texto de la reseña 3]"</p>
-                        <p class="client-name">- [Nombre del cliente 3]</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card glass-card hover-glow">
+                            <div class="quote-icon" style="position: absolute; top: -1rem; left: -1rem; opacity: 0.15; pointer-events: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 16 16 16s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="review-text">"[Escribe aquí el texto de la reseña 3]"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="client-name">[Nombre del cliente 3]</h4>
+                                        <div class="stars" style="margin-bottom:0;">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Reseña 4 -->
-                    <div class="testimonial-card glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"[Escribe aquí el texto de la reseña 4]"</p>
-                        <p class="client-name">- [Nombre del cliente 4]</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card glass-card hover-glow">
+                            <div class="quote-icon" style="position: absolute; top: -1rem; left: -1rem; opacity: 0.15; pointer-events: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 16 16 16s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="review-text">"[Escribe aquí el texto de la reseña 4]"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="client-name">[Nombre del cliente 4]</h4>
+                                        <div class="stars" style="margin-bottom:0;">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Reseña 5 -->
-                    <div class="testimonial-card glass-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="review-text">"[Escribe aquí el texto de la reseña 5]"</p>
-                        <p class="client-name">- [Nombre del cliente 5]</p>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card glass-card hover-glow">
+                            <div class="quote-icon" style="position: absolute; top: -1rem; left: -1rem; opacity: 0.15; pointer-events: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="var(--gold)"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.999v2C17.999 16 17 16 16 16s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+                            </div>
+                            <div class="testimonial-content">
+                                <p class="review-text">"[Escribe aquí el texto de la reseña 5]"</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="client-name">[Nombre del cliente 5]</h4>
+                                        <div class="stars" style="margin-bottom:0;">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="slider-controls">
-                    <button class="slider-btn prev-btn" aria-label="Previous review">←</button>
-                    <button class="slider-btn next-btn" aria-label="Next review">→</button>
+                
+                <div class="testimonial-dots" id="testimonialDots" style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem;">
+                    <!-- Dots generated by JS -->
                 </div>
             </div>
         </div>
