@@ -192,6 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoNextBtn = document.querySelector('.video-carousel-container .next-btn');
 
     if (videoTrack && videoPrevBtn && videoNextBtn) {
+        // Fallback for Edge/Safari to ensure videos play
+        const carouselVideos = videoTrack.querySelectorAll('video');
+        carouselVideos.forEach(v => {
+            v.play().catch(e => console.log('Autoplay prevented:', e));
+        });
+
         const gap = 24; // approx 1.5rem
 
         const scrollNext = () => {
