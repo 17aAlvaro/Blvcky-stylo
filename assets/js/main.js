@@ -193,9 +193,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (videoTrack && videoPrevBtn && videoNextBtn) {
         // Fallback for Edge/Safari to ensure videos play
-        const carouselVideos = videoTrack.querySelectorAll('video');
+        const carouselVideos = document.querySelectorAll('video');
         carouselVideos.forEach(v => {
-            v.play().catch(e => console.log('Autoplay prevented:', e));
+            v.muted = true;
+            v.defaultMuted = true;
+            v.setAttribute('playsinline', '');
+            
+            // Promise handling for Edge
+            const playPromise = v.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(e => {
+                    console.log('Autoplay prevented:', e);
+                    // Force play on first user interaction if it still fails
+                    document.body.addEventListener('click', () => {
+                        v.play().catch(err => console.log('Still cannot play:', err));
+                    }, { once: true });
+                });
+            }
         });
 
         const gap = 24; // approx 1.5rem
