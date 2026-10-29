@@ -398,6 +398,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Reto de la Capa Lightbox ---
+    const lightbox = document.getElementById('reto-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxSub = document.getElementById('lightbox-sub');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    if (lightbox) {
+        document.querySelectorAll('[data-lightbox-src]').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const src = trigger.getAttribute('data-lightbox-src');
+                const title = trigger.getAttribute('data-lightbox-title') || '';
+                const sub = trigger.getAttribute('data-lightbox-sub') || '';
+                
+                if (lightboxImg) lightboxImg.src = src;
+                if (lightboxTitle) lightboxTitle.textContent = title;
+                if (lightboxSub) lightboxSub.textContent = sub;
+                
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    }
+
 });
 
 // --- PWA Service Worker Registration ---

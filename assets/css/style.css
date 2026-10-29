@@ -1352,3 +1352,701 @@ h6,
         transform: translateX(5px);
     }
 }
+
+/* ==========================================================================
+   RETO DE LA CAPA (8 FIRMAS) SECTION
+   ========================================================================== */
+.reto-section {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 70%),
+        linear-gradient(180deg, #050505 0%, #0a0a0a 50%, #050505 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.reto-glow-bg {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.07) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reto-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Badge Header */
+.reto-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 50px;
+    padding: 0.45rem 1.4rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.reto-badge-icon {
+    font-size: 1rem;
+    animation: flame-flicker 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes flame-flicker {
+    0% {
+        transform: scale(1) rotate(-3deg);
+    }
+
+    100% {
+        transform: scale(1.15) rotate(3deg);
+        filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.8));
+    }
+}
+
+/* Progress Tracker Bar */
+.reto-progress-card {
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+    padding: 1.75rem 2rem;
+    margin: 0 auto 3.5rem;
+    max-width: 900px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(212, 175, 55, 0.03);
+}
+
+.reto-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.reto-progress-title {
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    margin: 0;
+}
+
+.reto-progress-pct {
+    background: linear-gradient(135deg, #d4af37, #f1c40f);
+    color: #050505;
+    font-weight: 800;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.reto-progress-track {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.reto-progress-fill {
+    width: 25%;
+    /* 2 de 8 = 25% */
+    height: 100%;
+    background: linear-gradient(90deg, #d4af37 0%, #fff 50%, #d4af37 100%);
+    background-size: 200% 100%;
+    animation: gold-shimmer 2.5s infinite linear;
+    border-radius: 999px;
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.8);
+    transition: width 1s ease;
+}
+
+@keyframes gold-shimmer {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.reto-milestones-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.reto-milestone-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+}
+
+.reto-milestone-node .node-star {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.reto-milestone-node.completed .node-star {
+    background: linear-gradient(135deg, #d4af37, #f9e596);
+    color: #050505;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+.reto-milestone-node.completed .node-label {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.reto-milestone-node.locked .node-star {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.reto-milestone-node.locked .node-label {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Two-column Story & Cape Showcase */
+.reto-showcase-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 900px) {
+    .reto-showcase-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+    }
+}
+
+.reto-cape-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #080808;
+    border: 1.5px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(212, 175, 55, 0.15);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.reto-cape-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 70px rgba(212, 175, 55, 0.3);
+}
+
+.reto-cape-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reto-cape-card:hover img {
+    transform: scale(1.04);
+}
+
+.reto-cape-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem 1.25rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.reto-cape-tag {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.reto-cape-title {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 0.2rem;
+    letter-spacing: 1px;
+}
+
+.reto-zoom-hint {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.reto-story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.reto-story-badge {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.reto-story-title {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.reto-story-p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.reto-story-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.reto-mini-stat {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.reto-mini-stat:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.reto-mini-stat-num {
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-family: var(--font-heading);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.reto-mini-stat-lbl {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ARTISTS SIGNATURES GRID */
+.reto-wall-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.reto-wall-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.reto-wall-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Featured 2 Unlocked Artists Grid */
+.reto-unlocked-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .reto-unlocked-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+}
+
+.artist-card-unlocked {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0d0d0d;
+    border: 1.5px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(212, 175, 55, 0.12);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+}
+
+.artist-card-unlocked:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.7);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 55px rgba(212, 175, 55, 0.28);
+}
+
+.artist-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #000;
+}
+
+.artist-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    display: block;
+}
+
+.artist-card-unlocked:hover .artist-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.artist-top-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--gold);
+    font-weight: 700;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.artist-status-pill {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(46, 204, 113, 0.18);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(46, 204, 113, 0.4);
+    color: #2ecc71;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.artist-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(5, 5, 5, 0.98) 0%, rgba(5, 5, 5, 0.85) 60%, transparent 100%);
+    z-index: 2;
+}
+
+.artist-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.artist-name {
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-family: var(--font-heading);
+    margin: 0;
+}
+
+.verified-icon {
+    width: 22px;
+    height: 22px;
+    fill: #1d9bf0;
+    flex-shrink: 0;
+}
+
+.artist-subtitle {
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.artist-desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.artist-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #fff;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.artist-card-unlocked:hover .artist-view-btn {
+    background: var(--gold);
+    color: #050505;
+    font-weight: 700;
+}
+
+/* Locked Remaining Slots Grid */
+.reto-locked-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+@media (min-width: 640px) {
+    .reto-locked-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .reto-locked-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+.artist-card-locked {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px dashed rgba(212, 175, 55, 0.22);
+    border-radius: 14px;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-card-locked:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.04);
+    transform: translateY(-4px);
+}
+
+.locked-number {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    color: rgba(212, 175, 55, 0.6);
+    letter-spacing: 1px;
+}
+
+.locked-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: rgba(212, 175, 55, 0.6);
+    transition: all 0.3s ease;
+}
+
+.artist-card-locked:hover .locked-icon-wrap {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.locked-title {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.locked-sub {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Call to action bar */
+.reto-actions-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* LIGHTBOX MODAL */
+.reto-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.reto-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content-box {
+    position: relative;
+    max-width: 900px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.92);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reto-lightbox.active .lightbox-content-box {
+    transform: scale(1);
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 175, 55, 0.2);
+}
+
+.lightbox-caption {
+    margin-top: 1rem;
+    color: #fff;
+    text-align: center;
+    font-family: var(--font-heading);
+    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+}
+
+.lightbox-subcaption {
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.25s ease;
+}
+
+.lightbox-close-btn:hover {
+    background: var(--gold);
+    color: #050505;
+    border-color: var(--gold);
+}

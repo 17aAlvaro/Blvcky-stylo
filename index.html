@@ -33,6 +33,8 @@
     <header class="header">
         <div class="logo">BLVCKY <span class="white-gold-gradient-text">STYLO</span></div>
         <nav class="nav-links">
+            <a href="#reto-capa" style="position: relative;">El Reto <span
+                    style="font-size: 0.65rem; background: var(--gold); color: #000; padding: 2px 6px; border-radius: 10px; font-weight: 800; vertical-align: middle; margin-left: 2px;">2/8</span></a>
             <a href="#about">Quién Soy</a>
             <a href="#portfolio">Trabajos</a>
             <a href="#services">Servicios</a>
@@ -156,6 +158,442 @@
             </div>
         </div>
     </section>
+
+    <!-- PROXIMA APERTURA SECTION -->
+    <section class="proxima-apertura section-padding" id="proxima-apertura" style="
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.08) 0%, transparent 70%);
+    ">
+        <!-- Decorative background glow -->
+        <div style="
+            position: absolute;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
+        "></div>
+
+        <div class="container">
+            <div class="section-header center scroll-reveal" style="margin-bottom: 3rem;">
+                <div style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    background: rgba(212,175,55,0.12);
+                    border: 1px solid rgba(212,175,55,0.35);
+                    border-radius: 50px;
+                    padding: 0.4rem 1.2rem;
+                    margin-bottom: 1.5rem;
+                    font-size: 0.8rem;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: var(--gold);
+                    font-weight: 600;
+                ">
+                    <span style="
+                        width: 8px; height: 8px;
+                        background: var(--gold);
+                        border-radius: 50%;
+                        animation: pulse-dot 1.5s ease-in-out infinite;
+                    "></span>
+                    MUY PRONTO
+                </div>
+                <h2 class="section-title">Próxima <span class="gold-text">Apertura</span></h2>
+                <p class="section-subtitle">El siguiente capítulo está a punto de comenzar. Algo grande se acerca.</p>
+            </div>
+
+            <div class="scroll-reveal" style="
+                max-width: 680px;
+                margin: 0 auto;
+                position: relative;
+            ">
+                <!-- Glow frame behind image -->
+                <div style="
+                    position: absolute;
+                    inset: -3px;
+                    border-radius: 20px;
+                    background: linear-gradient(135deg, rgba(212,175,55,0.5), transparent 50%, rgba(212,175,55,0.3));
+                    filter: blur(8px);
+                    z-index: 0;
+                "></div>
+                <div style="
+                    position: relative;
+                    z-index: 1;
+                    border-radius: 18px;
+                    overflow: hidden;
+                    border: 1.5px solid rgba(212,175,55,0.3);
+                    box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.1);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    cursor: default;
+                " onmouseover="this.style.transform='scale(1.015)';this.style.boxShadow='0 35px 80px rgba(0,0,0,0.6), 0 0 60px rgba(212,175,55,0.2)'"
+                    onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.1)'">
+                    <img src="assets/images/proxima-apertura.png" alt="Próxima Apertura - Nuevo local Blvcky Stylo"
+                        style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.4);
+            }
+        }
+    </style>
+
+    <!-- RETO DE LA CAPA (8 FIRMAS) SECTION -->
+    <section class="reto-section section-padding" id="reto-capa">
+        <div class="reto-glow-bg"></div>
+
+        <div class="container reto-container">
+            <!-- Section Header -->
+            <div class="section-header center scroll-reveal">
+                <div class="reto-badge">
+                    <span class="reto-badge-icon">🔥</span>
+                    RETO EXCLUSIVO • 8 FIRMAS
+                </div>
+                <h2 class="section-title">EL RETO DE LA <span class="gold-text">CAPA</span></h2>
+                <p class="section-subtitle">
+                    El objetivo: conseguir la firma de 8 grandes artistas en la capa oficial de corte de Blvcky
+                    Stylo.<br>
+                    Dos estrellas internacionales ya han pasado por sus manos y han firmado la historia.
+                </p>
+            </div>
+
+            <!-- Progress Tracker -->
+            <div class="reto-progress-card scroll-reveal">
+                <div class="reto-progress-header">
+                    <h3 class="reto-progress-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        PROGRESO DEL RETO: <span class="gold-text" style="font-weight: 700;">2 DE 8 FIRMAS</span>
+                    </h3>
+                    <span class="reto-progress-pct">25% COMPLETADO</span>
+                </div>
+
+                <div class="reto-progress-track">
+                    <div class="reto-progress-fill"></div>
+                </div>
+
+                <!-- 8 Milestones row -->
+                <div class="reto-milestones-row">
+                    <div class="reto-milestone-node completed">
+                        <div class="node-star">✓</div>
+                        <span class="node-label">TRUENO</span>
+                    </div>
+                    <div class="reto-milestone-node completed">
+                        <div class="node-star">✓</div>
+                        <span class="node-label">MAIKEL D.</span>
+                    </div>
+                    <div class="reto-milestone-node locked">
+                        <div class="node-star">🔒</div>
+                        <span class="node-label">#03</span>
+                    </div>
+                    <div class="reto-milestone-node locked">
+                        <div class="node-star">🔒</div>
+                        <span class="node-label">#04</span>
+                    </div>
+                    <div class="reto-milestone-node locked">
+                        <div class="node-star">🔒</div>
+                        <span class="node-label">#05</span>
+                    </div>
+                    <div class="reto-milestone-node locked">
+                        <div class="node-star">🔒</div>
+                        <span class="node-label">#06</span>
+                    </div>
+                    <div class="reto-milestone-node locked">
+                        <div class="node-star">🔒</div>
+                        <span class="node-label">#07</span>
+                    </div>
+                    <div class="reto-milestone-node locked">
+                        <div class="node-star">🔒</div>
+                        <span class="node-label">#08</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Column Showcase: Cape Showcase + Story -->
+            <div class="reto-showcase-row">
+                <!-- Cape Showcase Card -->
+                <div class="reto-cape-card scroll-reveal reveal-left" data-lightbox-src="assets/images/capablacky.jpeg"
+                    data-lightbox-title="Capa Oficial Blvcky Stylo"
+                    data-lightbox-sub="Diseño exclusivo con espacios para las firmas de los artistas">
+                    <img src="assets/images/capablacky.jpeg" alt="Capa Oficial del Reto - Blvcky Stylo" loading="lazy">
+                    <div class="reto-cape-overlay">
+                        <div>
+                            <span class="reto-cape-tag">Pieza Exclusiva de Colección</span>
+                            <h3 class="reto-cape-title">Capa Oficial Blvcky Stylo</h3>
+                        </div>
+                        <span class="reto-zoom-hint">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                <line x1="11" y1="8" x2="11" y2="14"></line>
+                                <line x1="8" y1="11" x2="14" y2="11"></line>
+                            </svg>
+                            Ver capa
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Story & Highlights Content -->
+                <div class="reto-story-content scroll-reveal reveal-right">
+                    <span class="reto-story-badge">Cultura Urbana & Alta Barbería</span>
+                    <h3 class="reto-story-title">Un corte que trasciende: <span class="gold-text">8 estrellas para la
+                            historia</span></h3>
+                    <p class="reto-story-p">
+                        El reto de la capa no es solo cortar el pelo: es tender un puente entre la escena musical urbana
+                        de máximo nivel y el arte del fade milimétrico.
+                    </p>
+                    <p class="reto-story-p">
+                        Cada estrella en la capa está reservada para un artista que confía su imagen a Blvcky Stylo
+                        antes de subir al escenario o grabar sus videoclips. Tras el corte, cada referente sella su
+                        firma para siempre.
+                    </p>
+
+                    <div class="reto-story-highlights">
+                        <div class="reto-mini-stat">
+                            <div class="reto-mini-stat-num">2 / 8</div>
+                            <div class="reto-mini-stat-lbl">Artistas Confirmados</div>
+                        </div>
+                        <div class="reto-mini-stat">
+                            <div class="reto-mini-stat-num">100%</div>
+                            <div class="reto-mini-stat-lbl">Auténtico & En Directo</div>
+                        </div>
+                        <div class="reto-mini-stat">
+                            <div class="reto-mini-stat-num">VIP</div>
+                            <div class="reto-mini-stat-lbl">Sesiones Privadas</div>
+                        </div>
+                        <div class="reto-mini-stat">
+                            <div class="reto-mini-stat-num">6 PLAZAS</div>
+                            <div class="reto-mini-stat-lbl">Disponibles en el Reto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wall of Signatures -->
+            <div class="reto-wall-header scroll-reveal">
+                <h3 class="reto-wall-title">El Muro de las <span class="gold-text">Firmas</span></h3>
+                <p class="reto-wall-subtitle">Conoce a los artistas que ya forman parte del reto y mantente atento a los
+                    siguientes lanzamientos.</p>
+            </div>
+
+            <!-- 2 Unlocked Artists (Featured) -->
+            <div class="reto-unlocked-grid">
+                <!-- Artist 1: TRUENO -->
+                <div class="artist-card-unlocked scroll-reveal" data-lightbox-src="assets/images/truenoguapa.png"
+                    data-lightbox-title="Trueno con Blvcky Stylo"
+                    data-lightbox-sub="Firma #01 en la Capa Oficial del Reto">
+                    <div class="artist-img-wrapper">
+                        <img src="assets/images/truenoguapa.png" alt="Trueno con la capa de Blvcky Stylo"
+                            loading="lazy">
+                        <div class="artist-top-badge">Firma #01 • Desbloqueada</div>
+                        <div class="artist-status-pill">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            FIRMADA
+                        </div>
+                        <div class="artist-card-info">
+                            <div class="artist-name-row">
+                                <h4 class="artist-name">TRUENO</h4>
+                                <svg class="verified-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.67-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.33 2.33 4.99-4.99 1.41 1.42-6.4 6.4z" />
+                                </svg>
+                            </div>
+                            <div class="artist-subtitle">@Trueno • Referente Internacional (Argentina)</div>
+                            <p class="artist-desc">
+                                El ganador de Red Bull Batalla, estrella del freestyle y voz de éxitos globales como
+                                "Mamichula" y "Tranky Funky", luciendo la capa personalizada tras su corte con Blvcky
+                                Stylo.
+                            </p>
+                            <span class="artist-view-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Ver Foto Completa
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artist 2: MAIKEL DELACALLE -->
+                <div class="artist-card-unlocked scroll-reveal delay-1" data-lightbox-src="assets/images/maikel.png"
+                    data-lightbox-title="Maikel Delacalle con Blvcky Stylo"
+                    data-lightbox-sub="Firma #02 en la Capa Oficial del Reto">
+                    <div class="artist-img-wrapper">
+                        <img src="assets/images/maikel.png" alt="Maikel Delacalle con Blvcky Stylo" loading="lazy">
+                        <div class="artist-top-badge">Firma #02 • Desbloqueada</div>
+                        <div class="artist-status-pill">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            FIRMADA
+                        </div>
+                        <div class="artist-card-info">
+                            <div class="artist-name-row">
+                                <h4 class="artist-name">MAIKEL DELACALLE</h4>
+                                <svg class="verified-icon" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.67-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.33 2.33 4.99-4.99 1.41 1.42-6.4 6.4z" />
+                                </svg>
+                            </div>
+                            <div class="artist-subtitle">@maikeldelacalle • Leyenda Urbana Canarias / España</div>
+                            <p class="artist-desc">
+                                El pionero que cambió el R&B latino y el dancehall en España con himnos como "Ganas" y
+                                "Condiciones", sumándose al reto y dejando su firma grabada en la capa.
+                            </p>
+                            <span class="artist-view-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                Ver Foto Completa
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining 6 Locked Mystery Slots -->
+            <div class="reto-locked-grid scroll-reveal delay-2">
+                <!-- Slot 3 -->
+                <div class="artist-card-locked">
+                    <span class="locked-number">#03</span>
+                    <div class="locked-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <div class="locked-title">¿QUIÉN SIGUE?</div>
+                    <div class="locked-sub">Próximo Artista</div>
+                </div>
+
+                <!-- Slot 4 -->
+                <div class="artist-card-locked">
+                    <span class="locked-number">#04</span>
+                    <div class="locked-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <div class="locked-title">EN CAMINO</div>
+                    <div class="locked-sub">Por Revelar</div>
+                </div>
+
+                <!-- Slot 5 -->
+                <div class="artist-card-locked">
+                    <span class="locked-number">#05</span>
+                    <div class="locked-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <div class="locked-title">CONFIDENCIAL</div>
+                    <div class="locked-sub">Próximamente</div>
+                </div>
+
+                <!-- Slot 6 -->
+                <div class="artist-card-locked">
+                    <span class="locked-number">#06</span>
+                    <div class="locked-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <div class="locked-title">SECRETO VIP</div>
+                    <div class="locked-sub">Próximamente</div>
+                </div>
+
+                <!-- Slot 7 -->
+                <div class="artist-card-locked">
+                    <span class="locked-number">#07</span>
+                    <div class="locked-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <div class="locked-title">EN NEGOCIACIÓN</div>
+                    <div class="locked-sub">Próximamente</div>
+                </div>
+
+                <!-- Slot 8 -->
+                <div class="artist-card-locked">
+                    <span class="locked-number">#08</span>
+                    <div class="locked-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="locked-title">FIRMA FINAL</div>
+                    <div class="locked-sub">Cierre del Reto</div>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="reto-actions-bar scroll-reveal delay-3">
+                <a href="https://www.instagram.com/blvcky.stylo/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline-white">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="vertical-align: middle; margin-right: 6px;">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Seguir el Reto en Instagram
+                </a>
+                <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-gold">
+                    Reservar Cita con Blvcky
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="reto-lightbox" class="reto-lightbox" role="dialog" aria-modal="true" aria-label="Vista previa de imagen">
+        <div class="lightbox-content-box">
+            <button id="lightbox-close" class="lightbox-close-btn" aria-label="Cerrar">&times;</button>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Vista previa">
+            <h4 id="lightbox-title" class="lightbox-caption"></h4>
+            <p id="lightbox-sub" class="lightbox-subcaption"></p>
+        </div>
+    </div>
 
     <!-- PORTFOLIO SECTION -->
     <section class="portfolio section-padding" id="portfolio">
