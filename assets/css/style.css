@@ -2050,3 +2050,375 @@ h6,
     color: #050505;
     border-color: var(--gold);
 }
+
+/* ==========================================================================
+   PESTAÑA DE NOTIFICACIÓN: NUEVA APERTURA BLVCKY STYLO HAIR STUDIO
+   ========================================================================== */
+.apertura-notif-tab {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 999999;
+    width: calc(100% - 48px);
+    max-width: 420px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px) scale(0.96);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.4s;
+}
+
+.apertura-notif-tab.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.apertura-notif-tab.is-hidden {
+    opacity: 0;
+    transform: translateY(-25px) scale(0.95);
+    pointer-events: none;
+}
+
+.apertura-notif-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: rgba(14, 14, 18, 0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
+                0 0 35px rgba(212, 175, 55, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    padding: 1.25rem;
+    pointer-events: auto;
+}
+
+.apertura-notif-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.apertura-notif-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.apertura-notif-avatar-wrap {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.apertura-notif-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--gold);
+    display: block;
+}
+
+.apertura-notif-status-dot {
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border: 2px solid #0e0e12;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.apertura-notif-sender-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.apertura-notif-sender-name {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.apertura-notif-meta {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-top: 1px;
+}
+
+.apertura-notif-close-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.apertura-notif-close-btn:hover {
+    background: rgba(212, 175, 55, 0.25);
+    color: #ffffff;
+    border-color: var(--gold);
+    transform: scale(1.08);
+}
+
+.apertura-notif-body {
+    text-align: left;
+}
+
+.apertura-notif-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.8px;
+    margin-bottom: 0.65rem;
+}
+
+.apertura-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: apDotPulse 1.5s infinite;
+}
+
+@keyframes apDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.4); }
+}
+
+.apertura-notif-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+}
+
+.apertura-notif-desc {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.83rem;
+    color: #d1d5db;
+    line-height: 1.5;
+    margin-bottom: 0.85rem;
+}
+
+.apertura-notif-desc strong {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.apertura-notif-flyer-thumb {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    margin-bottom: 0.95rem;
+    cursor: pointer;
+    height: 110px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.apertura-notif-flyer-thumb:hover {
+    transform: scale(1.018);
+    border-color: var(--gold);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.apertura-notif-flyer-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.92);
+    transition: filter 0.3s ease;
+}
+
+.apertura-notif-flyer-thumb:hover img {
+    filter: brightness(1.05);
+}
+
+.apertura-zoom-pill {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.apertura-notif-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.apertura-btn-primary {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0.68rem 1rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fcecae 0%, #d4af37 100%);
+    color: #050505;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.25s ease;
+}
+
+.apertura-btn-primary:hover {
+    box-shadow: 0 6px 22px rgba(212, 175, 55, 0.65);
+    transform: translateY(-2px);
+    color: #000000;
+}
+
+.apertura-btn-dismiss {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.68rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #e5e7eb;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.apertura-btn-dismiss:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+}
+
+/* Floating pill button if closed to re-open anytime */
+.apertura-launcher-pill {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99990;
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.15rem;
+    border-radius: 999px;
+    background: rgba(14, 14, 18, 0.92);
+    border: 1.5px solid rgba(212, 175, 55, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.35);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.apertura-launcher-pill.is-active {
+    display: inline-flex;
+    animation: apLauncherIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes apLauncherIn {
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.apertura-launcher-pill:hover {
+    transform: translateY(-3px) scale(1.03);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+.ap-launcher-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+}
+
+@media (max-width: 600px) {
+    .apertura-notif-tab {
+        top: 14px;
+        left: 12px;
+        right: 12px;
+        width: calc(100% - 24px);
+        max-width: none;
+    }
+
+    .apertura-notif-card {
+        padding: 1.05rem;
+        border-radius: 16px;
+    }
+
+    .apertura-notif-title {
+        font-size: 1.05rem;
+    }
+
+    .apertura-notif-desc {
+        font-size: 0.79rem;
+    }
+
+    .apertura-launcher-pill {
+        bottom: 16px;
+        right: 14px;
+        padding: 0.5rem 0.95rem;
+        font-size: 0.78rem;
+    }
+}

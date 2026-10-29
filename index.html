@@ -20,6 +20,68 @@
 </head>
 
 <body>
+    <!-- PESTAÑA DE NOTIFICACIÓN: NUEVA APERTURA BLVCKY STYLO HAIR STUDIO -->
+    <aside id="aperturaNotifTab" class="apertura-notif-tab" aria-label="Aviso de nueva apertura" role="dialog">
+        <div class="apertura-notif-card">
+            <div class="apertura-notif-header">
+                <div class="apertura-notif-brand">
+                    <div class="apertura-notif-avatar-wrap">
+                        <img src="assets/images/portadadefinitiva.png" alt="Blvcky Stylo" class="apertura-notif-avatar">
+                        <span class="apertura-notif-status-dot"></span>
+                    </div>
+                    <div class="apertura-notif-sender-info">
+                        <span class="apertura-notif-sender-name">BLVCKY STYLO</span>
+                        <span class="apertura-notif-meta">• AHORA • NUEVO AVISO</span>
+                    </div>
+                </div>
+                <button type="button" class="apertura-notif-close-btn" id="closeAperturaBtn" aria-label="Cerrar aviso">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="apertura-notif-body">
+                <div class="apertura-notif-badge">
+                    <span class="apertura-badge-dot"></span>
+                    <span>NUEVA APERTURA • 1 DE DICIEMBRE</span>
+                </div>
+                <h3 class="apertura-notif-title">
+                    BLVCKY STYLO <span class="gold-gradient-text">HAIR STUDIO</span>
+                </h3>
+                <p class="apertura-notif-desc">
+                    Nueva apertura el <strong>1 de diciembre</strong>. ¡Te espero en <strong>Blvcky Stylo Hair Studio</strong>! 💈
+                </p>
+            </div>
+
+            <div class="apertura-notif-actions">
+                <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
+                    rel="noopener noreferrer" class="apertura-btn-primary">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>Reservar Cita</span>
+                </a>
+                <button type="button" class="apertura-btn-dismiss" id="dismissAperturaBtn">
+                    Entendido
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Botón discreto para volver a abrir la notificación si se cerró -->
+    <button type="button" id="reopenAperturaBtn" class="apertura-launcher-pill"
+        aria-label="Ver aviso de nueva apertura">
+        <span>💈</span>
+        <span>Apertura 1 Dic</span>
+        <span class="ap-launcher-dot"></span>
+    </button>
+
 
     <!-- PRELOADER -->
     <div id="preloader" class="preloader">
@@ -129,7 +191,7 @@
                             <path d="M17 19h4"></path>
                         </svg>
                     </div>
-                    <h3 class="service-title">Corte Aprendiz</h3>
+                    <h3 class="service-title">CORTE KEVIN BLENDS</h3>
                     <p class="service-desc">Corta Kevin ACNIEL, está siendo formado actualmente en el curso de
                         iniciación, tiene nivel suficiente como para hacer un buen corte.</p>
                 </a>
@@ -158,99 +220,6 @@
             </div>
         </div>
     </section>
-
-    <!-- PROXIMA APERTURA SECTION -->
-    <section class="proxima-apertura section-padding" id="proxima-apertura" style="
-        position: relative;
-        overflow: hidden;
-        background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.08) 0%, transparent 70%);
-    ">
-        <!-- Decorative background glow -->
-        <div style="
-            position: absolute;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
-            top: 50%; left: 50%;
-            transform: translate(-50%,-50%);
-            pointer-events: none;
-        "></div>
-
-        <div class="container">
-            <div class="section-header center scroll-reveal" style="margin-bottom: 3rem;">
-                <div style="
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    background: rgba(212,175,55,0.12);
-                    border: 1px solid rgba(212,175,55,0.35);
-                    border-radius: 50px;
-                    padding: 0.4rem 1.2rem;
-                    margin-bottom: 1.5rem;
-                    font-size: 0.8rem;
-                    letter-spacing: 0.15em;
-                    text-transform: uppercase;
-                    color: var(--gold);
-                    font-weight: 600;
-                ">
-                    <span style="
-                        width: 8px; height: 8px;
-                        background: var(--gold);
-                        border-radius: 50%;
-                        animation: pulse-dot 1.5s ease-in-out infinite;
-                    "></span>
-                    MUY PRONTO
-                </div>
-                <h2 class="section-title">Próxima <span class="gold-text">Apertura</span></h2>
-                <p class="section-subtitle">El siguiente capítulo está a punto de comenzar. Algo grande se acerca.</p>
-            </div>
-
-            <div class="scroll-reveal" style="
-                max-width: 680px;
-                margin: 0 auto;
-                position: relative;
-            ">
-                <!-- Glow frame behind image -->
-                <div style="
-                    position: absolute;
-                    inset: -3px;
-                    border-radius: 20px;
-                    background: linear-gradient(135deg, rgba(212,175,55,0.5), transparent 50%, rgba(212,175,55,0.3));
-                    filter: blur(8px);
-                    z-index: 0;
-                "></div>
-                <div style="
-                    position: relative;
-                    z-index: 1;
-                    border-radius: 18px;
-                    overflow: hidden;
-                    border: 1.5px solid rgba(212,175,55,0.3);
-                    box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.1);
-                    transition: transform 0.4s ease, box-shadow 0.4s ease;
-                    cursor: default;
-                " onmouseover="this.style.transform='scale(1.015)';this.style.boxShadow='0 35px 80px rgba(0,0,0,0.6), 0 0 60px rgba(212,175,55,0.2)'"
-                    onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.1)'">
-                    <img src="assets/images/proxima-apertura.png" alt="Próxima Apertura - Nuevo local Blvcky Stylo"
-                        style="width: 100%; height: auto; display: block;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        @keyframes pulse-dot {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(1.4);
-            }
-        }
-    </style>
 
     <!-- RETO DE LA CAPA (8 FIRMAS) SECTION -->
     <section class="reto-section section-padding" id="reto-capa">

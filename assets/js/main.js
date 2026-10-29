@@ -443,6 +443,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Notificación de Nueva Apertura (2 segundos tras entrar) ---
+    const aperturaTab = document.getElementById('aperturaNotifTab');
+    const closeAperturaBtn = document.getElementById('closeAperturaBtn');
+    const dismissAperturaBtn = document.getElementById('dismissAperturaBtn');
+    const reopenAperturaBtn = document.getElementById('reopenAperturaBtn');
+
+    if (aperturaTab) {
+        // Se muestra exactamente a los 2 segundos de entrar en la web
+        setTimeout(() => {
+            aperturaTab.classList.remove('is-hidden');
+            aperturaTab.classList.add('is-visible');
+        }, 2000);
+
+        const hideApertura = () => {
+            aperturaTab.classList.remove('is-visible');
+            aperturaTab.classList.add('is-hidden');
+            if (reopenAperturaBtn) {
+                setTimeout(() => {
+                    reopenAperturaBtn.classList.add('is-active');
+                }, 300);
+            }
+        };
+
+        if (closeAperturaBtn) closeAperturaBtn.addEventListener('click', hideApertura);
+        if (dismissAperturaBtn) dismissAperturaBtn.addEventListener('click', hideApertura);
+
+        if (reopenAperturaBtn) {
+            reopenAperturaBtn.addEventListener('click', () => {
+                reopenAperturaBtn.classList.remove('is-active');
+                aperturaTab.classList.remove('is-hidden');
+                aperturaTab.classList.add('is-visible');
+            });
+        }
+    }
+
 });
 
 // --- PWA Service Worker Registration ---
