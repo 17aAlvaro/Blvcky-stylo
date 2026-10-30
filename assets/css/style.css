@@ -37,7 +37,10 @@ body {
     max-width: 100vw;
 }
 
-img, video, canvas, svg {
+img,
+video,
+canvas,
+svg {
     max-width: 100%;
     height: auto;
 }
@@ -1566,6 +1569,7 @@ h6,
     grid-template-columns: repeat(8, 1fr);
     gap: 0.5rem;
     margin-top: 1.25rem;
+    width: 100%;
 }
 
 .reto-milestone-node {
@@ -1575,6 +1579,15 @@ h6,
     gap: 0.35rem;
     font-size: 0.72rem;
     letter-spacing: 0.5px;
+    min-width: 0;
+}
+
+.reto-milestone-node .node-label {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .reto-milestone-node .node-star {
@@ -2144,8 +2157,8 @@ h6,
     visibility: hidden;
     transform: translateY(-30px) scale(0.96);
     transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0.4s;
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.4s;
 }
 
 .apertura-notif-tab.is-visible {
@@ -2170,8 +2183,8 @@ h6,
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(212, 175, 55, 0.4);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
-                0 0 35px rgba(212, 175, 55, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 0 35px rgba(212, 175, 55, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
     padding: 1.25rem;
     pointer-events: auto;
 }
@@ -2292,8 +2305,17 @@ h6,
 }
 
 @keyframes apDotPulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.4); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.4);
+    }
 }
 
 .apertura-notif-title {
@@ -2453,8 +2475,15 @@ h6,
 }
 
 @keyframes apLauncherIn {
-    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .apertura-launcher-pill:hover {
@@ -2578,10 +2607,13 @@ h6,
 }
 
 @keyframes heroDotPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
         transform: scale(1);
     }
+
     50% {
         opacity: 0.35;
         transform: scale(0.8);
@@ -2744,6 +2776,7 @@ h6,
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 15%;
     display: block;
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -3036,8 +3069,13 @@ h6,
     }
 
     .reto-progress-card {
-        padding: 1.25rem 1rem;
+        padding: 1.25rem 0.85rem;
         margin-bottom: 2.5rem;
+        overflow: hidden;
+    }
+
+    .reto-progress-header {
+        gap: 0.5rem;
     }
 
     .reto-progress-title {
@@ -3047,6 +3085,36 @@ h6,
     .reto-progress-pct {
         font-size: 0.75rem;
         padding: 0.25rem 0.6rem;
+    }
+
+    /* Reto Milestones: 2 clean rows of 4 on mobile (iPhone 13, Android, etc.) */
+    .reto-milestones-row {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.95rem 0.35rem;
+        margin-top: 1.15rem;
+        width: 100%;
+    }
+
+    .reto-milestone-node {
+        min-width: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .reto-milestone-node .node-star {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+    }
+
+    .reto-milestone-node .node-label {
+        font-size: 0.68rem;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+        display: block;
     }
 
     .reto-unlocked-grid {
@@ -3231,6 +3299,20 @@ h6,
     .reto-locked-grid {
         grid-template-columns: 1fr;
     }
+
+    .reto-milestones-row {
+        gap: 0.75rem 0.2rem;
+    }
+
+    .reto-milestone-node .node-star {
+        width: 26px;
+        height: 26px;
+        font-size: 0.68rem;
+    }
+
+    .reto-milestone-node .node-label {
+        font-size: 0.6rem;
+    }
 }
 
 /* ==========================================================================
@@ -3239,6 +3321,7 @@ h6,
 
 /* 1. FULL HD DESKTOP (min-width: 1920px) */
 @media (min-width: 1920px) {
+
     .container,
     .hero-content {
         max-width: 1520px;
