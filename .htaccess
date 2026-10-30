@@ -1,0 +1,35 @@
+# --- BLVCKY STYLO HOSTINGER CONFIGURATION ---
+
+# 1. Priorizar index.html sobre default.php o index.php
+DirectoryIndex index.html index.php default.php
+
+# 2. Forzar HTTPS seguro
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 3. Tipos MIME correctos para evitar bloqueos en Google Chrome
+<IfModule mod_mime.c>
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType image/svg+xml .svg .svgz
+    AddType image/webp .webp
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/x-icon .ico
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    AddType video/mp4 .mp4
+    AddType application/manifest+json .json .webmanifest
+</IfModule>
+
+# 4. Compresión Gzip para carga ultra rápida
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# 5. Seguridad: deshabilitar navegación de directorios
+Options -Indexes
+
