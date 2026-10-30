@@ -20,22 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Mobile Menu Toggle ---
+    // --- Mobile & Tablet Menu Toggle ---
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuBtn.classList.toggle('active');
-    });
+    if (menuBtn && navLinks) {
+        const toggleMenu = () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        };
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuBtn.classList.remove('active');
+        const closeMenu = () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        };
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close mobile menu when clicking any link inside it
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
-    });
+
+        // Close menu if resizing back to desktop width
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1025) {
+                closeMenu();
+            }
+        });
+    }
 
     // --- Scroll Reveal Animation ---
     const revealElements = document.querySelectorAll('.scroll-reveal, .reveal-left, .reveal-right');

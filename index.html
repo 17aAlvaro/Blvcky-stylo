@@ -93,20 +93,35 @@
 
     <!-- HEADER / NAVIGATION -->
     <header class="header">
-        <div class="logo">BLVCKY <span class="white-gold-gradient-text">STYLO</span></div>
-        <nav class="nav-links">
-            <a href="#reto-capa" style="position: relative;">El Reto <span
-                    style="font-size: 0.65rem; background: var(--gold); color: #000; padding: 2px 6px; border-radius: 10px; font-weight: 800; vertical-align: middle; margin-left: 2px;">2/8</span></a>
+        <!-- Empty Left Spacer to keep logo in the exact middle -->
+        <div class="header-left-spacer" aria-hidden="true"></div>
+
+        <!-- Center Brand Logo -->
+        <a href="#home" class="logo" aria-label="Inicio">BLVCKY <span class="white-gold-gradient-text">STYLO</span></a>
+
+        <!-- Desktop Navigation: All links collected on the right -->
+        <nav class="nav-links-right desktop-nav" aria-label="Navegación principal">
+            <a href="#reto-capa">El Reto <span class="nav-badge-gold">2/8</span></a>
             <a href="#about">Quién Soy</a>
-            <a href="#portfolio">Trabajos</a>
             <a href="#services">Servicios</a>
             <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
                 rel="noopener noreferrer" class="btn btn-header-reservar">Reservar</a>
         </nav>
+
+        <!-- Mobile & Tablet Menu Toggle -->
         <button class="mobile-menu-btn" aria-label="Abrir menú">
             <span></span>
             <span></span>
         </button>
+
+        <!-- Mobile & Tablet Slide-in Menu -->
+        <nav class="nav-links" aria-label="Menú principal móvil y tablet">
+            <a href="#reto-capa">El Reto <span class="nav-badge-gold">2/8</span></a>
+            <a href="#about">Quién Soy</a>
+            <a href="#services">Servicios</a>
+            <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
+                rel="noopener noreferrer" class="btn btn-header-reservar">Reservar Cita</a>
+        </nav>
     </header>
 
     <!-- HERO SECTION -->
@@ -129,15 +144,11 @@
                         <span class="hero-vip-loc">• PINTO (MADRID)</span>
                     </div>
 
-                    <h1 class="hero-title reveal-text">
+                    <h1 class="hero-title reveal-text" style="margin-bottom: 1.6rem;">
                         MENTE <span class="gold-gradient-text">CLARA</span><br>
                         IMAGEN <span class="gold-gradient-text">FUERTE</span><br>
                         Y MUCHO <span class="gold-gradient-text">STYLO</span>
                     </h1>
-
-                    <p class="hero-subtitle fade-in-up delay-1">
-                        Degradados quirúrgicos, visagismo y cortes de autor. La barbería elegida por estrellas internacionales como <strong>Trueno</strong> y <strong>Maikel Delacalle</strong>.
-                    </p>
 
                     <div class="hero-actions hero-split-actions fade-in-up delay-2">
                         <a href="https://yeasy.io/commerce/52bcd32d-6062-48b1-949e-556baa88e068" target="_blank"
@@ -334,24 +345,11 @@
                     <span class="reto-story-badge">Cultura Urbana & Alta Barbería</span>
                     <h3 class="reto-story-title">Un corte que trasciende: <span class="gold-text">8 estrellas para la
                             historia</span></h3>
-                    <p class="reto-story-p">
-                        El reto de la capa no es solo cortar el pelo: es tender un puente entre la escena musical urbana
-                        de máximo nivel y el arte del fade milimétrico.
-                    </p>
-                    <p class="reto-story-p">
-                        Cada estrella en la capa está reservada para un artista que confía su imagen a Blvcky Stylo
-                        antes de subir al escenario o grabar sus videoclips. Tras el corte, cada referente sella su
-                        firma para siempre.
-                    </p>
 
                     <div class="reto-story-highlights">
                         <div class="reto-mini-stat">
                             <div class="reto-mini-stat-num">2 / 8</div>
                             <div class="reto-mini-stat-lbl">Artistas Confirmados</div>
-                        </div>
-                        <div class="reto-mini-stat">
-                            <div class="reto-mini-stat-num">100%</div>
-                            <div class="reto-mini-stat-lbl">Auténtico & En Directo</div>
                         </div>
                         <div class="reto-mini-stat">
                             <div class="reto-mini-stat-num">VIP</div>
@@ -905,13 +903,8 @@
             </div>
             <div class="about-text reveal-right">
                 <h2 class="section-title">Quién es <span class="gold-text">Blvcky Stylo</span></h2>
-                <p>Soy un artista de la barbería comprometido con la excelencia. Más que un simple corte, ofrezco una
-                    experiencia de transformación personal.</p>
-                <p>Especialista en la industria, certificado a través de múltiples programas de formación en barbería, y
-                    respaldado por la confianza de miles de seguidores apasionados por la imagen, la precisión y la
-                    atención al detalle.</p>
-                <p>Mi objetivo es elevar el estándar de la barbería moderna, combinando técnicas clásicas con tendencias
-                    vanguardistas para crear estilos únicos y perfectos.</p>
+                <p style="font-size: 1.1rem; color: #d1d5db; line-height: 1.6; margin-bottom: 1.5rem;">De empezar cortando en su habitación a los 16 años a convertirse en el barbero de referencia. Descubre su evolución paso a paso:</p>
+                <a href="#timeline" class="btn btn-outline-white" style="border-radius: 50px; font-size: 0.85rem; padding: 0.75rem 1.5rem;">Ver Trayectoria Completa ↓</a>
             </div>
         </div>
     </section>
@@ -1042,22 +1035,22 @@
                     rel="noopener noreferrer">@blvcky.stylo</a></p>
 
             <div class="insta-grid">
-                <!-- IG Feed Embeds -->
+                <!-- IG Feed Embeds: New Videos -->
                 <div class="insta-item">
-                    <iframe src="https://www.instagram.com/reel/DZXbMJ9MqoL/embed?theme=dark" class="insta-iframe"
-                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe src="https://www.instagram.com/reel/De17a9gIWnr/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true" title="Instagram Reel Blvcky Stylo"></iframe>
                 </div>
                 <div class="insta-item">
-                    <iframe src="https://www.instagram.com/reel/DZVLUEDMXd7/embed?theme=dark" class="insta-iframe"
-                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe src="https://www.instagram.com/reel/DeUzQuQIZiN/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true" title="Instagram Reel Blvcky Stylo"></iframe>
                 </div>
                 <div class="insta-item">
-                    <iframe src="https://www.instagram.com/reel/DYfXVx4MB4a/embed?theme=dark" class="insta-iframe"
-                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe src="https://www.instagram.com/p/DdMKHcqjMfZ/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true" title="Instagram Post Blvcky Stylo"></iframe>
                 </div>
                 <div class="insta-item">
-                    <iframe src="https://www.instagram.com/reel/DYZUwjTMq88/embed?theme=dark" class="insta-iframe"
-                        frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    <iframe src="https://www.instagram.com/reel/Det-0N1o9xo/embed?theme=dark" class="insta-iframe"
+                        frameborder="0" scrolling="no" allowtransparency="true" title="Instagram Reel Blvcky Stylo"></iframe>
                 </div>
             </div>
 
