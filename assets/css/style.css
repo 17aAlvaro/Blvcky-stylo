@@ -2422,3 +2422,470 @@ h6,
         font-size: 0.78rem;
     }
 }
+
+
+/* ==========================================================================
+   HERO CELEBRITY SPOTLIGHT (TRUENO & MAIKEL DELACALLE)
+   ========================================================================== */
+
+.hero {
+    min-height: 100vh;
+    height: auto;
+    padding-top: 110px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.hero-grid-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+/* Left Column: Typography & CTAs */
+.hero-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.hero-vip-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    color: #fcecae;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-vip-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--gold);
+    animation: heroDotPulse 2s infinite ease-in-out;
+}
+
+.hero-vip-loc {
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+@keyframes heroDotPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.35;
+        transform: scale(0.8);
+    }
+}
+
+.hero-text-col .hero-title {
+    font-size: clamp(2.3rem, 5.5vw, 4.3rem);
+    line-height: 1.08;
+    margin-bottom: 1.15rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-align: left;
+}
+
+.hero-text-col .hero-subtitle {
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    color: #d1d5db;
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
+    max-width: 580px;
+    padding: 0;
+    text-align: left;
+}
+
+.hero-text-col .hero-subtitle strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.hero-split-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.hero-btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1.05rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.75);
+}
+
+.hero-btn-reto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.05rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero-trust-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 1.6rem;
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+.hero-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-trust-item strong {
+    color: #ffffff;
+}
+
+.hero-trust-stars {
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+}
+
+.hero-trust-sep {
+    color: rgba(212, 175, 55, 0.4);
+}
+
+/* Right Column: Celebrity Showcase */
+.hero-showcase-col {
+    position: relative;
+    width: 100%;
+}
+
+.hero-showcase-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+    padding: 0 4px;
+}
+
+.hero-showcase-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+.hero-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+    animation: heroDotPulse 1.8s infinite ease-in-out;
+}
+
+.hero-showcase-hint {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.hero-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+}
+
+.hero-celeb-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 10 / 14;
+    background: #0d0d0d;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(212, 175, 55, 0.12);
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.hero-celeb-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-celeb-card:hover {
+    border-color: rgba(212, 175, 55, 0.85);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.4);
+}
+
+.hero-celeb-card:hover img {
+    transform: scale(1.06);
+}
+
+.hero-celeb-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.15) 0%, rgba(5, 5, 5, 0) 35%, rgba(5, 5, 5, 0.75) 70%, rgba(5, 5, 5, 0.96) 100%);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.hero-celeb-badge {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    color: #fcecae;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 9px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.hero-celeb-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hero-celeb-name-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-celeb-name {
+    font-family: var(--font-heading);
+    font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.15;
+}
+
+.hero-verified-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    background: #1d9bf0;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 9px;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.hero-celeb-tagline {
+    font-size: clamp(0.68rem, 1vw, 0.76rem);
+    color: var(--gold);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-celeb-zoom-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2px 7px;
+    border-radius: 4px;
+    align-self: flex-start;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+    .hero-grid-split {
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 3.5rem;
+    }
+
+    .hero-cards-grid {
+        gap: 20px;
+    }
+
+    .hero-celeb-card:first-child {
+        transform: translateY(-16px);
+    }
+
+    .hero-celeb-card:first-child:hover {
+        transform: translateY(-24px) scale(1.03);
+    }
+
+    .hero-celeb-card:last-child {
+        transform: translateY(16px);
+    }
+
+    .hero-celeb-card:last-child:hover {
+        transform: translateY(8px) scale(1.03);
+    }
+
+    .hero-showcase-col::before {
+        content: "";
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        right: 15%;
+        bottom: 15%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(212, 175, 55, 0) 70%);
+        filter: blur(50px);
+        z-index: -1;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero {
+        padding-top: 95px;
+        padding-bottom: 40px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-text-col {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text-col .hero-title {
+        text-align: center;
+    }
+
+    .hero-text-col .hero-subtitle {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-split-actions {
+        justify-content: center;
+    }
+
+    .hero-trust-bar {
+        justify-content: center;
+    }
+
+    .hero-text-col .consent-notice {
+        text-align: center;
+    }
+
+    .hero-showcase-header {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-split-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero-btn-gold,
+    .hero-btn-reto {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-cards-grid {
+        gap: 10px;
+    }
+
+    .hero-celeb-overlay {
+        padding: 9px;
+    }
+
+    .hero-celeb-badge {
+        font-size: 0.58rem;
+        padding: 3px 7px;
+    }
+
+    .hero-celeb-name {
+        font-size: 0.88rem;
+    }
+
+    .hero-celeb-tagline {
+        font-size: 0.65rem;
+    }
+
+    .hero-celeb-zoom-hint {
+        font-size: 0.58rem;
+        padding: 1px 5px;
+    }
+}
